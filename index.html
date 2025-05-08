@@ -3,53 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Aﾚphα Gaming Community Teamspeak Server</title>
+    <title>Join Aﾚphα Gaming Community on TeamSpeak</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./redalphaihe.png">
 
     <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        * {
+            font-family: 'Poppins', sans-serif;
         }
 
-        .fade-in {
-            animation: fadeIn 1.5s ease-in-out;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(16, 14, 23, 0.95) 0%, rgba(40, 36, 55, 0.95) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .server-card {
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .server-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .connect-btn {
+            background: linear-gradient(135deg, #FF4E50 0%, #F9D423 100%);
+            box-shadow: 0 4px 15px rgba(249, 212, 35, 0.3);
+        }
+
+        .particle {
+            animation: float 4s ease-in-out infinite;
         }
     </style>
 </head>
 
-<body class="bg-[url('./bg_contact_us.png')] bg-cover bg-center text-white min-h-screen flex flex-col items-center justify-center">
+<body class="bg-[url('./bg_contact_us.png')] bg-cover bg-center min-h-screen flex items-center justify-center p-4">
+    <div class="gradient-bg rounded-2xl p-8 lg:p-12 max-w-2xl w-full relative overflow-hidden">
+        <!-- Particles Background -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="particle absolute w-4 h-4 bg-white rounded-full opacity-10 top-1/4 left-1/4"></div>
+            <div class="particle absolute w-6 h-6 bg-red-500 rounded-full opacity-10 top-1/3 right-1/4 animation-delay-500"></div>
+        </div>
 
-<div class="fade-in text-center p-8 rounded-lg bg-opacity-80 bg-white text-gray-900 shadow-xl">
-    <h1 class="text-4xl font-extrabold text-danger mb-4">Welcome to Aﾚphα Gaming Community Teamspeak Server!</h1>
-    <p class="text-lg mb-6">
-        We’ve got a dedicated Teamspeak server where you can connect with fellow gamers,
-        form squads, and dive into the action together. <br>
-        Whether you're here for casual fun or serious competition,
-        you’ll always find a place in our vibrant community.
-    </p>
-    <h6 class="mb-3">🎧 TeamSpeak Server Address : <strong style="font-weight: bold"> agc </strong></h6>
-    <h6 class="mb-3">🎧 TeamSpeak Server Address : <strong style="font-weight: bold"> alpha gaming </strong></h6>
-    <br>
-  
-    <a href="ts3server://agc" class="block">
-        <button class="px-7 py-3 bg-red-600 hover:bg-red-800 text-white text-lg font-medium rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-            Connect Now
-        </button>
-    </a>
-</div>
+        <!-- Content -->
+        <div class="relative z-10 text-center">
+            <div class="mb-8">
+                <img src="./redalphaihe.png" alt="Aﾚphα Logo" class="w-24 h-24 mx-auto mb-6 rounded-xl shadow-lg">
+                <h1 class="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent mb-4">
+                    Welcome to Aﾚphα Gaming
+                </h1>
+                <p class="text-gray-300 text-sm lg:text-base leading-relaxed">
+                    Join our thriving community of passionate gamers. Coordinate strategies,<br>
+                    build friendships, and dominate the battlefield together!
+                </p>
+            </div>
 
-<div class="absolute inset-0 pointer-events-none">
-    <div class="absolute w-48 h-48 bg-purple-500 rounded-full opacity-50 top-10 left-10 blur-lg"></div>
-    <div class="absolute w-72 h-72 bg-blue-500 rounded-full opacity-40 bottom-10 right-10 blur-2xl"></div>
-</div>
+            <!-- Server Info Cards -->
+            <div class="space-y-4 mb-8">
+                <div class="server-card p-4 rounded-lg flex items-center justify-center space-x-3">
+                    <i class="fas fa-server text-red-400"></i>
+                    <span class="font-mono text-gray-200">agc</span>
+                </div>
+                <div class="server-card p-4 rounded-lg flex items-center justify-center space-x-3">
+                    <i class="fas fa-globe-asia text-red-400"></i>
+                    <span class="font-mono text-gray-200">alpha gaming</span>
+                </div>
+            </div>
 
+            <a href="ts3server://agc" class="inline-block w-full">
+                <button class="connect-btn w-full py-4 rounded-xl font-bold text-white hover:opacity-90 transition-opacity">
+                    <i class="fas fa-plug mr-2"></i>Connect Now
+                </button>
+            </a>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-2 gap-4 mt-8 text-left">
+                <div class="flex items-center space-x-2 text-sm text-gray-400">
+                    <i class="fas fa-shield-alt text-red-400"></i>
+                    <span>Secure Connection</span>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-400">
+                    <i class="fas fa-clock text-red-400"></i>
+                    <span>24/7 Availability</span>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-400">
+                    <i class="fas fa-microphone text-red-400"></i>
+                    <span>Premium Audio Quality</span>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-400">
+                    <i class="fas fa-users text-red-400"></i>
+                    <span>Active Community</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
